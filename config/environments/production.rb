@@ -65,14 +65,14 @@ Hek::Application.configure do
     :email_prefix => "[HEK Exception] ",
     :sender_address => %{ "HEK Exception" <exception@hek.uni-karlsruhe.de> },
     :exception_recipients => %w{ hekweb@hek.uni-karlsruhe.de },
-    :ignore_crawlers => %w{ Googlebot bingbot YandexBot exabot}
+    :ignore_crawlers => %w{ Googlebot bingbot YandexBot}
 
   config.middleware.use ExceptionNotification::Rack,
     :email => {
     :email_prefix => "[HEK ExceptionNotification] ",
     :sender_address => %{ "HEK Exception" <exception@hek.uni-karlsruhe.de> },
     :exception_recipients => %w{ hekweb@hek.uni-karlsruhe.de },
-    :ignore_crawlers => %w{ Googlebot bingbot YandexBot exabot}
+    :ignore_crawlers => %w{ Googlebot bingbot YandexBot}
   }
 
   Paperclip.options[:command_path] = '/usr/bin/'
